@@ -15,7 +15,7 @@ app.use(express.json());
 
 // CORS setup
 app.use(cors({
-    origin: "https://social-media-hosted-hvyzrw7c7-chiku-binoys-projects.vercel.app",
+    origin: "https://social-media-hosted.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -44,7 +44,7 @@ app.use('/admin', AdminRouter);
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://social-media-hosted-hvyzrw7c7-chiku-binoys-projects.vercel.app", 
+        origin: "https://social-media-hosted.vercel.app", 
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
     }
 });

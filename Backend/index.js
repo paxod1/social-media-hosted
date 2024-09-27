@@ -15,7 +15,7 @@ app.use(express.json());
 
 // CORS setup
 app.use(cors({
-    origin: "https://social-media-hosted-jft3dj1tz-chiku-binoys-projects.vercel.app",
+    origin: "https://social-media-hosted.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));

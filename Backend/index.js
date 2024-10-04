@@ -15,7 +15,7 @@ app.use(express.json());
 
 // CORS setup
 app.use(cors({
-    origin: "https://social-media-hosted.vercel.app",
+    origin: "https://localhost:3000",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -44,8 +44,9 @@ app.use('/admin', AdminRouter);
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://social-media-hosted.vercel.app", 
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+        origin: "https://localhost:3000", 
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        allowedHeaders: ["Content-Type", "Authorization"]
     }
 });
 
@@ -92,7 +93,7 @@ io.on('connection', (socket) => {
 });
 
 // Server setup
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
